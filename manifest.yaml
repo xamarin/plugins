@@ -388,6 +388,11 @@
   TriggerPaths: [ Android/Google.Play.Core ]
   MacBuildTargets: [ ci ]
   WindowsBuildTargets: [ ci ]
+- Name: Google.UserMessagingPlatform
+  BuildScript: ./XPlat/Google.UserMessagingPlatform/build.cake
+  TriggerPaths: [ XPlat/Google.UserMessagingPlatform ]
+  MacBuildTargets: [ ci ]
+  WindowsBuildTargets: [ ci ]
 
 
 #######################################################

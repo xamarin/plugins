@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+
+    <attr
+        path="/api/package[@name='com.google.android.ump']/class[@name='FormError']/method[@name='getErrorCode' and count(parameter)=0]"
+        name="managedName"
+        >
+        ErrorCodeData
+    </attr>
+    <attr
+        path="/api/package[@name='com.google.android.ump']/class[@name='ConsentDebugSettings']/method[@name='getDebugGeography' and count(parameter)=0]"
+        name="managedName"
+        >
+        DebugGeographyData
+    </attr>
+    
+</metadata>

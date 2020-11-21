@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+
+    <attr
+        path="/api/package[@name='com.google.android.gms.internal.consent_sdk']"
+        name="managedName"
+        >
+        Android.Gms.Internal.ConsentSDK
+    </attr>
+    <attr
+        path="/api/package[@name='com.google.android.ump']"
+        name="managedName"
+        >
+        Xamarin.Google.UserMesssagingPlatform
+    </attr>
+    
+    
+    
+</metadata>

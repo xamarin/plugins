@@ -1,0 +1,16 @@
+{
+  "Registrations":[ 
+    {
+      "Component": {
+        "Type": "Maven",
+        "Maven": {
+          "ArtifactId": "user-messaging-platform",
+          "GroupId": "com.google.android.ump",
+          "Version": "1.0.0",
+          "NuGetId": "Xamarin.Google.UserMessagingPlatform"
+        }
+      },
+    }
+  ],
+  "Version": 1
+}
