@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidAzureSpeachSample", "AndroidAzureSpeachSample\AndroidAzureSpeachSample.csproj", "{34516C8A-9F5A-4776-AC9C-17BB4BAB259A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidAzureSpeech", "..\..\source\AndroidAzureSpeech\AndroidAzureSpeech\AndroidAzureSpeech.csproj", "{DC39AE1C-2180-4688-9DD0-FB9A7DC5072E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34516C8A-9F5A-4776-AC9C-17BB4BAB259A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34516C8A-9F5A-4776-AC9C-17BB4BAB259A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34516C8A-9F5A-4776-AC9C-17BB4BAB259A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34516C8A-9F5A-4776-AC9C-17BB4BAB259A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC39AE1C-2180-4688-9DD0-FB9A7DC5072E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC39AE1C-2180-4688-9DD0-FB9A7DC5072E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC39AE1C-2180-4688-9DD0-FB9A7DC5072E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC39AE1C-2180-4688-9DD0-FB9A7DC5072E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

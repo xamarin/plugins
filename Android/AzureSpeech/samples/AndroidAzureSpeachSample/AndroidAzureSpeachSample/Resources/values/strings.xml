@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="app_name">Android Azure Speach Sample</string>
+    <string name="action_settings">Settings</string>
+    <string name="speechButtonText">Recognize Speech</string>
+</resources>

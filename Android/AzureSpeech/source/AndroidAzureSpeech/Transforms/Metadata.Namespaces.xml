@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <attr path="/api/package[@name='com.microsoft.cognitiveservices.speech']" name="managedName">
+        CognitiveServices.Speech
+    </attr>
+    <attr path="/api/package[@name='com.microsoft.cognitiveservices.speech.audio']" name="managedName">
+        CognitiveServices.Speech.Audio
+    </attr>
+    <attr path="/api/package[@name='com.microsoft.cognitiveservices.speech.conversation']" name="managedName">
+        CognitiveServices.Speech.Conversation
+    </attr>
+    <attr path="/api/package[@name='com.microsoft.cognitiveservices.speech.dialog']" name="managedName">
+        CognitiveServices.Speech.Dialog
+    </attr>
+    <attr path="/api/package[@name='com.microsoft.cognitiveservices.speech.intent']" name="managedName">
+        CognitiveServices.Speech.Intent
+    </attr>
+    <attr path="/api/package[@name='com.microsoft.cognitiveservices.speech.translation']" name="managedName">
+        CognitiveServices.Speech.Translation
+    </attr>
+    <attr path="/api/package[@name='com.microsoft.cognitiveservices.speech.util']" name="managedName">
+        CognitiveServices.Speech.Util
+    </attr>
+</metadata>

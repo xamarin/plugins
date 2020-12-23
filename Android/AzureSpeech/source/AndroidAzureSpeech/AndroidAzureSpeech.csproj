@@ -1,0 +1,91 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <!--
+  https://montemagno.com/converting-xamarin-libraries-to-sdk-style-multi-targeted-projects/
+  -->
+    <PropertyGroup>
+        <AssemblyName>Xamarin.Microsoft.Azure.Speech</AssemblyName>
+
+        <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+        <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+        <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+        <AndroidUseIntermediateDesignerFile>True</AndroidUseIntermediateDesignerFile>
+        <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+
+        <TargetFrameworks>MonoAndroid81</TargetFrameworks>
+        <AndroidCodegenTarget>XAJavaInterop1</AndroidCodegenTarget>
+
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <Description>Bindings for Microsoft Azure Speech package</Description>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <IsBindingProject>true</IsBindingProject>
+        <AndroidClassParser>class-parse</AndroidClassParser>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <!--
+        nuget packaging
+        -->
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>Xamarin.Microsoft.Azure.Speech</PackageId>
+        <PackageVersion>1.6.0</PackageVersion>
+        <Title>Xamarin.Microsoft.Azure.Speech</Title>
+        <Summary>
+            Microsoft Azure Speech bindings for Xamarin
+        </Summary>
+        <Description>
+            Bindings for Microsoft Azure Speech package
+        </Description>
+        <Owners>Microsoft</Owners>
+        <Authors>Microsoft</Authors>
+        <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
+        <PackageLicenseUrl>
+        https://go.microsoft.com/fwlink/?linkid=2009338
+        </PackageLicenseUrl>
+        <PackageProjectUrl>
+        https://go.microsoft.com/fwlink/?linkid=2009337
+        </PackageProjectUrl>
+        <RepositoryUrl>
+        https://go.microsoft.com/fwlink/?linkid=2009337
+        </RepositoryUrl>
+        <RequireLicenceAcceptance>true</RequireLicenceAcceptance>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <PackageReleaseNotes>
+            initial bindings
+        </PackageReleaseNotes>
+        <PackageTags>xamarin, android, bindings, azure, speech </PackageTags>
+        <PackOnBuild>true</PackOnBuild>
+        <RequireLicenceAcceptance>true</RequireLicenceAcceptance>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    </PropertyGroup>
+
+
+    <ItemGroup>
+        <TransformFile Include="Transforms\*.xml" />
+    </ItemGroup>
+
+  <ItemGroup>
+    <!--
+    <ProjectReference Include="..\things\Xamarin.Android.Things.csproj" />
+    -->
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="MSBuild.Sdk.Extras" Version="1.4.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Additions\" />
+    <Folder Include="Jars\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedJar Include="..\..\externals\AzureSpeech.aar">
+      <Link>Jars\AzureSpeech.aar</Link>
+    </EmbeddedJar>
+  </ItemGroup>
+
+  <Import Project="$(MSBuildSDKExtrasTargets)" Condition="Exists('$(MSBuildSDKExtrasTargets)')" />
+
+</Project>
