@@ -1,8 +1,8 @@
 **Xamarin is not responsible for, nor does it grant any licenses to, third-party packages. Some packages may require or install dependencies which are governed by additional licenses.**
 
-Note: This component depends on ReactiveX [RxJava](https://github.com/ReactiveX/RxJava) which is subject to the [Apache 2.0](https://github.com/ReactiveX/RxJava/blob/2.x/LICENSE) and ReactiveX [RxAndroid](https://github.com/ReactiveX/RxAndroid) which are subject to the [Apache 2.0](https://github.com/ReactiveX/RxAndroid/blob/2.x/LICENSE)
+Note: This component depends on ReactiveX [RxJava](https://github.com/ReactiveX/RxJava) which is subject to the [Apache 2.0](https://github.com/ReactiveX/RxJava/blob/2.x/LICENSE), RxKotlin [RxKotlin](https://github.com/ReactiveX/RxKotlin) which is subject to the [Apache 2.0](https://github.com/ReactiveX/RxKotlin/blob/2.x/LICENSE), and ReactiveX [RxAndroid](https://github.com/ReactiveX/RxAndroid) which are subject to the [Apache 2.0](https://github.com/ReactiveX/RxAndroid/blob/2.x/LICENSE)
 
-### Xamarin Component for ReactiveX RxJava and RxAndroid for Xamarin.Android
+### Xamarin Component for ReactiveX RxJava, RxKotlin, and RxAndroid for Xamarin.Android
 
 **The MIT License (MIT)**
 
@@ -15,4 +15,3 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 20160601
-

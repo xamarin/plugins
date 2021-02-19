@@ -1,10 +1,10 @@
-#addin nuget:?package=SharpZipLib
+#addin nuget:?package=SharpZipLib&version=1.2.0
 
-var TARGET = Argument ("t", Argument ("target", "Default"));
+var TARGET = Argument ("t", Argument ("target", "ci"));
 
 var RXJAVA2_RXANDROID_VERSION = "2.1.1";
-var RXJAVA2_RXJAVA_VERSION = "2.2.9";
-var RXJAVA2_RXKOTLIN_VERSION = "2.3.0";
+var RXJAVA2_RXJAVA_VERSION = "2.2.12";
+var RXJAVA2_RXKOTLIN_VERSION = "2.4.0";
 
 var RXJAVA3_RXANDROID_VERSION = "3.0.0";
 var RXJAVA3_RXJAVA_VERSION = "3.0.0";
@@ -87,9 +87,21 @@ Task ("externals")
 	XmlPoke("./source/rxjava3/RxKotlin/RxKotlin.csproj", "/Project/PropertyGroup/PackageVersion", RXJAVA3_RXKOTLIN_NUGET_VERSION);
 });
 
+Task("native")
+	.Does(() =>
+{
+	var fn = IsRunningOnWindows() ? "gradlew.bat" : "gradlew";
+	var gradlew = MakeAbsolute((FilePath)("./native/ReactiveXSample/" + fn));
+	var exit = StartProcess(gradlew, new ProcessSettings {
+		Arguments = "assemble",
+		WorkingDirectory = "./native/ReactiveXSample/"
+	});
+	if (exit != 0) throw new Exception($"Gradle exited with exit code {exit}.");
+});
 
 Task("libs")
 	.IsDependentOn("externals")
+	.IsDependentOn("native")
 	.Does(() =>
 {
 	MSBuild("./ReactiveX.sln", c => {
@@ -114,13 +126,29 @@ Task("nuget")
 });
 
 Task("samples")
-	.IsDependentOn("nuget");
+	.IsDependentOn("nuget")
+	.Does(() =>
+{
+	var settings = new MSBuildSettings()
+		.SetConfiguration("Release")
+		.SetVerbosity(Verbosity.Minimal)
+		.EnableBinaryLogger("./output/samples.binlog")
+		.WithRestore()
+		.WithProperty("DesignTimeBuild", "false");
+
+	MSBuild("./samples/ReactiveXSample.sln", settings);
+});
 
 Task ("clean")
 	.Does (() =>
 {
-	if (DirectoryExists ("./externals/"))
-		DeleteDirectory ("./externals", true);
+	CleanDirectories("./generated/*/bin");
+	CleanDirectories("./generated/*/obj");
+
+	CleanDirectories("./externals/");
+	CleanDirectories("./generated/");
+	CleanDirectories("./native/.gradle");
+	CleanDirectories("./native/**/build");
 });
 
 Task("Default")

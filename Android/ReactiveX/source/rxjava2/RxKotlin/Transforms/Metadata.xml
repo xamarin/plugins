@@ -1,21 +1,5 @@
 ﻿<metadata>
-  <remove-node path="/api/package" />
-  
-  <attr path="/api/package[@name='io.reactivex']" name="managedName">ReactiveX</attr>
-  <attr path="/api/package[@name='io.reactivex.annotations']" name="managedName">ReactiveX.Annotations</attr>
-  <attr path="/api/package[@name='io.reactivex.disposables']" name="managedName">ReactiveX.Disposables</attr>
-  <attr path="/api/package[@name='io.reactivex.exceptions']" name="managedName">ReactiveX.Exceptions</attr>
-  <attr path="/api/package[@name='io.reactivex.flowables']" name="managedName">ReactiveX.Flowables</attr>
-  <attr path="/api/package[@name='io.reactivex.functions']" name="managedName">ReactiveX.Functions</attr>
-  <attr path="/api/package[@name='io.reactivex.observables']" name="managedName">ReactiveX.Observables</attr>
-  <attr path="/api/package[@name='io.reactivex.observers']" name="managedName">ReactiveX.Observers</attr>
-  <attr path="/api/package[@name='io.reactivex.parallel']" name="managedName">ReactiveX.Parallel</attr>
-  <attr path="/api/package[@name='io.reactivex.plugins']" name="managedName">ReactiveX.Plugins</attr>
-  <attr path="/api/package[@name='io.reactivex.processors']" name="managedName">ReactiveX.Processors</attr>
-  <attr path="/api/package[@name='io.reactivex.schedulers']" name="managedName">ReactiveX.Schedulers</attr>
-  <attr path="/api/package[@name='io.reactivex.subjects']" name="managedName">ReactiveX.Subjects</attr>
-  <attr path="/api/package[@name='io.reactivex.subscribers']" name="managedName">ReactiveX.Subscribers</attr>
-  
-
-  <remove-node path="/api/package[contains(@name, 'internal')]" />
+    
+  <attr path="/api/package[@name='io.reactivex.rxkotlin']" name="managedName">ReactiveX.RxKotlin</attr>
+    
 </metadata>

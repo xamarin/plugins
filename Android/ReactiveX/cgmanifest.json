@@ -6,7 +6,7 @@
         "Maven": {
           "ArtifactId": "rxjava",
           "GroupId": "io.reactivex.rxjava2",
-          "Version": "2.2.9"
+          "Version": "2.2.12"
         }
       }
     },
@@ -30,7 +30,6 @@
         }
       }
     },
-
     {
       "Component": {
         "Type": "Maven",
