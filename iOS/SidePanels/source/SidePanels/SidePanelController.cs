@@ -655,7 +655,7 @@ namespace SidePanels
         /// Default button to place in gestureViewControllers top viewController. Override in sublcass to change look of default button
         /// </summary>
         /// <value>The left button for center panel.</value>
-        public UIBarButtonItem GetLeftButtonForCenterPanel()
+        public virtual UIBarButtonItem GetLeftButtonForCenterPanel()
         {
             return new UIBarButtonItem(DefaultImage, UIBarButtonItemStyle.Plain, (sender, e) => ToggleLeftPanel());
         }
