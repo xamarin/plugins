@@ -4,10 +4,10 @@
 var TARGET = Argument ("t", Argument ("target", "Default"));
 
 var IOS_PODS = new List<string> {
-	"platform :ios, '6.0'",
+	"platform :ios, '8.0'",
 	"install! 'cocoapods', :integrate_targets => false",
 	"target 'Xamarin' do",
-	"pod 'InAppSettingsKit', '2.6'",
+	"pod 'InAppSettingsKit', '2.15'",
 	"end",
 };
 

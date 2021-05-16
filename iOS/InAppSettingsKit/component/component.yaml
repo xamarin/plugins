@@ -1,4 +1,4 @@
-version: 2.6.0.1
+version: 2.15.0
 name: InAppSettingsKit
 id: InAppSettingsKit
 publisher: Xamarin Inc
@@ -28,7 +28,7 @@ samples:
 local-nuget-repo: ../output
 is_shell: true
 packages:
-  ios-unified: Xamarin.InAppSettingsKit, Version=2.6.0.1
+  ios-unified: Xamarin.InAppSettingsKit, Version=2.15.0
 additional-files:
   - source: "../External-Dependency-Info.txt"
     destination: "THIRD-PARTY-NOTICES.txt"
