@@ -43,6 +43,7 @@
     <Compile Include="CoreGraphicsExtensions.cs" />
     <Compile Include="SimpleCircleLiquidEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TitlePositions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

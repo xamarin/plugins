@@ -21,12 +21,18 @@ namespace LiquidFloatingActionButtonSample
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            
+
+            var font = UIFont.SystemFontOfSize(12);
+
+            LiquidFloatingCell.DefaultTitleColor = UIColor.White;
+
             var cells = new List<LiquidFloatingCell>
             {
-                new LiquidFloatingCell(UIImage.FromBundle("ic_cloud")),
-                new LiquidFloatingCell(UIImage.FromBundle("ic_system")),
-                new LiquidFloatingCell(UIImage.FromBundle("ic_place")),
+                new LiquidFloatingCell(UIImage.FromBundle("ic_cloud"), "cloud")
+                    .WithTitleFont(font)
+                    .WithTitleColor(UIColor.Green),
+                new LiquidFloatingCell(UIImage.FromBundle("ic_system"), "system"),
+                new LiquidFloatingCell(UIImage.FromBundle("ic_place"), "place")
             };
 
             topLeftButton.Image = UIImage.FromBundle("ic_art");
@@ -36,12 +42,14 @@ namespace LiquidFloatingActionButtonSample
             {
                 topLeftButton.Close();
             };
-
+            topLeftButton.TitlePosition = TitlePositions.Right;
+            
             bottomRightButton.Cells = cells;
             bottomRightButton.CellSelected += delegate
             {
                 bottomRightButton.Close();
             };
+            bottomRightButton.TitlePosition = TitlePositions.Left;
         }
     }
 }

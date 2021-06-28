@@ -41,6 +41,8 @@ namespace AnimatedButtons
         private CircleLiquidBaseView baseView = new CircleLiquidBaseView();
         private UIView liquidView = new UIView();
 
+        public TitlePositions TitlePosition { get; set; }
+
         public LiquidFloatingActionButton()
         {
             Setup();
