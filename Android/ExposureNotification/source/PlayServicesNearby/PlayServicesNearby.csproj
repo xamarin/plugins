@@ -38,9 +38,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.GooglePlayServices.Base" Version="117.1.0-preview01" />
-    <PackageReference Include="Xamarin.GooglePlayServices.Basement" Version="117.1.0-preview01" />
-    <PackageReference Include="Xamarin.GooglePlayServices.Tasks" Version="117.0.0-preview01" />
+    <PackageReference Include="Xamarin.GooglePlayServices.Base" Version="117.6.0" />
+    <PackageReference Include="Xamarin.GooglePlayServices.Basement" Version="117.6.0" />
+    <PackageReference Include="Xamarin.GooglePlayServices.Tasks" Version="117.2.1" />
   </ItemGroup>
 
   <ItemGroup>

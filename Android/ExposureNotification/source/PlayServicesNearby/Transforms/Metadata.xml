@@ -90,8 +90,11 @@
 	<attr path="/api/package[@name='com.google.android.gms.nearby.exposurenotification']/interface[@name='ExposureNotificationClient']/method[@name='getPackageConfiguration']" name="managedName">NativeGetPackageConfiguration</attr>
 	<attr path="/api/package[@name='com.google.android.gms.nearby.exposurenotification']/interface[@name='ExposureNotificationClient']/method[@name='getStatus']" name="managedName">NativeGetStatus</attr>
 
-    <attr path="/api/package[@name='com.google.android.gms.nearby.exposurenotification']/interface[@name='ExposureNotificationClient']/method[@name='deviceSupportsLocationlessScanning']" name="propertyName">DeviceSupportsLocationlessScanning</attr>
-    <attr path="/api/package[@name='com.google.android.gms.nearby.exposurenotification']/interface[@name='ExposureNotificationClient']/method[@name='deviceSupportsLocationlessScanning']" name="managedName">GetDeviceSupportsLocationlessScanning</attr>
+	<attr path="/api/package[@name='com.google.android.gms.nearby.exposurenotification']/interface[@name='ExposureNotificationClient']/method[@name='deviceSupportsLocationlessScanning']" name="propertyName">DeviceSupportsLocationlessScanning</attr>
+	<attr path="/api/package[@name='com.google.android.gms.nearby.exposurenotification']/interface[@name='ExposureNotificationClient']/method[@name='deviceSupportsLocationlessScanning']" name="managedName">NativeDeviceSupportsLocationlessScanning</attr>
+
+	<attr path="/api/package[@name='com.google.android.gms.nearby.exposurenotification']/interface[@name='ExposureNotificationClient']/method[@name='requestPreAuthorizedTemporaryExposureKeyHistory']" name="managedName">NativeRequestPreAuthorizedTemporaryExposureKeyHistory</attr>
+	<attr path="/api/package[@name='com.google.android.gms.nearby.exposurenotification']/interface[@name='ExposureNotificationClient']/method[@name='requestPreAuthorizedTemporaryExposureKeyRelease']" name="managedName">NativeRequestPreAuthorizedTemporaryExposureKeyRelease</attr>
 
 	<!--<attr path="/api/package[@name='com.google.android.gms.nearby.exposurenotification']/interface[@name='ExposureNotificationClient']" name="extends"></attr>-->
 

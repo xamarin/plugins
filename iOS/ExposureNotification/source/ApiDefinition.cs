@@ -356,6 +356,7 @@ namespace ExposureNotifications {
 	delegate void ENGetExposureInfoHandler ([NullAllowed] ENExposureInfo [] exposures, [NullAllowed] NSError error);
 	delegate void ENGetExposureWindowsHandler ([NullAllowed] ENExposureWindow [] exposureWindows, [NullAllowed] NSError error);
 	delegate void ENGetUserTraveledHandler (bool traveled, NSError error);
+	delegate void ENDiagnosisKeysAvailableHandler ([NullAllowed] ENTemporaryExposureKey [] keys);
 
 	[Introduced (PlatformName.iOS, 13, 5)]
 	[BaseType (typeof (NSObject))]
@@ -419,5 +420,19 @@ namespace ExposureNotifications {
 		[Async]
 		[Export ("getTestDiagnosisKeysWithCompletionHandler:")]
 		void GetTestDiagnosisKeys (ENGetDiagnosisKeysHandler completionHandler);
+
+		[Introduced (PlatformName.iOS, 14, 4)]
+		[NullAllowed, Export ("diagnosisKeysAvailableHandler", ArgumentSemantic.Copy)]
+		ENDiagnosisKeysAvailableHandler DiagnosisKeysAvailableHandler { get; set; }
+
+		[Introduced (PlatformName.iOS, 14, 4)]
+		[Async]
+		[Export ("preAuthorizeDiagnosisKeysWithCompletionHandler:")]
+		void PreAuthorizeDiagnosisKeys (ENErrorHandler completionHandler);
+
+		[Introduced (PlatformName.iOS, 14, 4)]
+		[Async]
+		[Export ("requestPreAuthorizedDiagnosisKeysWithCompletionHandler:")]
+		void RequestPreAuthorizedDiagnosisKeys (ENErrorHandler completionHandler);
 	}
 }

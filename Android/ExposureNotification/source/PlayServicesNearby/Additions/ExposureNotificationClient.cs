@@ -66,6 +66,12 @@ namespace Android.Gms.Nearby.ExposureNotification
 
 		public async Task<ExposureNotificationStatus> GetStatusAsync()
 			=> await NativeGetStatus().CastTask<ExposureNotificationStatus>();
+
+		public Task RequestPreAuthorizedTemporaryExposureKeyHistoryAsync()
+			=> NativeRequestPreAuthorizedTemporaryExposureKeyHistory().CastTask();
+
+		public Task RequestPreAuthorizedTemporaryExposureKeyReleaseAsync()
+			=> NativeRequestPreAuthorizedTemporaryExposureKeyRelease().CastTask();
 	}
 
 	internal static class GoogleTaskExtensions
