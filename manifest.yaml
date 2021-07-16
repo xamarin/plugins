@@ -692,11 +692,10 @@
   BuildScript: ./XPlat/GoogleVR/iOS/build.cake
   TriggerPaths: [ XPlat/GoogleVR/iOS ]
   MacBuildTargets: [ nuget, samples ]
-# Obsolete
-# - Name: OpenId
-#   BuildScript: ./XPlat/OpenId/build.cake
-#   TriggerPaths: [ XPlat/OpenId ]
-#   MacBuildTargets: [ nuget, samples ]
+- Name: OpenId
+  BuildScript: ./XPlat/OpenId/build.cake
+  TriggerPaths: [ XPlat/OpenId ]
+  MacBuildTargets: [ nuget, samples ]
 - Name: AzureMessaging
   BuildScript: ./XPlat/AzureMessaging/build.cake
   TriggerPaths: [ XPlat/AzureMessaging ]

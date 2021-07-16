@@ -1,53 +1,55 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CEE5309A-3522-4BAC-A305-9127C323420E}</ProjectGuid>
-    <ProjectTypeGuids>{8FFB629D-F513-41CE-95D2-7ECE97B6EEEC};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <OutputType>Library</OutputType>
-    <RootNamespace>OpenId.AppAuth</RootNamespace>
-    <AssemblyName>OpenId.AppAuth.iOS</AssemblyName>
-    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
-    <DefineConstants></DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="Xamarin.iOS" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Adjustments.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ObjcBindingCoreSource Include="Structs.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <NativeReference Include="..\..\..\externals\ios\libAppAuth.a">
-      <Kind>Static</Kind>
-      <ForceLoad>True</ForceLoad>
-      <Frameworks>SafariServices</Frameworks>
-    </NativeReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
+﻿<Project Sdk="MSBuild.Sdk.Extras/2.0.54">
+    <PropertyGroup>
+        <TargetFrameworks>Xamarin.iOS10</TargetFrameworks>
+        <IsBindingProject>true</IsBindingProject>
+        <RootNamespace>OpenId.AppAuth</RootNamespace>
+        <AssemblyName>OpenId.AppAuth.iOS</AssemblyName>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <PackageId>Xamarin.OpenId.AppAuth.iOS</PackageId>
+        <Title>OpenID AppAuth (OAuth Client) for iOS</Title>
+        <PackageDescription>
+            AppAuth for iOS is a client SDK for communicating with OAuth 2.0 and OpenID Connect providers.
+            It strives to directly map the requests and responses of those specifications, while following the idiomatic style of the implementation language.
+            In addition to mapping the raw protocol flows, convenience methods are available to assist with common tasks like performing an action with fresh tokens.
+        </PackageDescription>
+        <Authors>Microsoft</Authors>
+        <Owners>Microsoft</Owners>
+        <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
+        <PackageIconUrl>https://raw.githubusercontent.com/xamarin/XamarinComponents/master/XPlat/OpenId/images/logo_128x128.png</PackageIconUrl>
+        <PackageProjectUrl>https://go.microsoft.com/fwlink/?linkid=864982</PackageProjectUrl>
+        <PackageLicenseUrl>https://go.microsoft.com/fwlink/?linkid=864984</PackageLicenseUrl>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <PackageVersion>0.92.0</PackageVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Folder Include="Resources\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <NativeReference Include="..\..\..\externals\ios\libAppAuth.a">
+            <Kind>Static</Kind>
+            <ForceLoad>True</ForceLoad>
+            <Frameworks>SafariServices</Frameworks>
+        </NativeReference>
+        <None Include="..\..\..\External-Dependency-Info.txt" Pack="True" PackagePath="THIRD-PARTY-NOTICES.txt" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Remove="Structs.cs" />
+        <Compile Remove="ApiDefinition.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ObjcBindingCoreSource Include="Structs.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true'" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ObjcBindingApiDefinition Include="ApiDefinition.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true'" />
+    </ItemGroup>
 </Project>

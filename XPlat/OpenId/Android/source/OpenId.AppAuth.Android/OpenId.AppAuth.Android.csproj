@@ -1,77 +1,55 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <AndroidCodeGenTarget>XAJavaInterop1</AndroidCodeGenTarget>
-    <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
-  </PropertyGroup>
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DDD84AB4-80CE-4C3E-A6D0-8284A881A7A8}</ProjectGuid>
-    <ProjectTypeGuids>{10368E6C-D01B-4462-8E8B-01FC667A7035};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <OutputType>Library</OutputType>
-    <RootNamespace>OpenId.AppAuth</RootNamespace>
-    <AssemblyName>OpenId.AppAuth.Android</AssemblyName>
-    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
-    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
-    <AndroidClassParser>class-parse</AndroidClassParser>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <AndroidLinkMode>None</AndroidLinkMode>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <AndroidManagedSymbols>true</AndroidManagedSymbols>
-    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Xml" />
-  <Reference Include="System.Core" />
-    <Reference Include="Mono.Android" />
-    <Reference Include="Xamarin.Android.Support.v4">
-      <HintPath>..\packages\Xamarin.Android.Support.v4.23.3.0\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Android.Support.CustomTabs">
-      <HintPath>..\packages\Xamarin.Android.Support.CustomTabs.23.3.0\lib\MonoAndroid403\Xamarin.Android.Support.CustomTabs.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AuthorizationService.cs" />
-    <Compile Include="AuthorizationServiceConfiguration.cs" />
-    <Compile Include="AuthState.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <TransformFile Include="Transforms\EnumFields.xml" />
-    <TransformFile Include="Transforms\EnumMethods.xml" />
-    <TransformFile Include="Transforms\Metadata.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <LibraryProjectZip Include="..\..\..\externals\android\appauth.aar">
-      <Link>Native\appauth.aar</Link>
-    </LibraryProjectZip>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Native\" />
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="MSBuild.Sdk.Extras">
+    <PropertyGroup>
+        <TargetFrameworks>MonoAndroid10.0</TargetFrameworks>
+        <IsBindingProject>true</IsBindingProject>
+        <AssemblyName>OpenId.AppAuth.Android</AssemblyName>
+        <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+        <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+        <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+        <AndroidUseIntermediateDesignerFile>True</AndroidUseIntermediateDesignerFile>
+        <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+        <RootNamespace>OpenId.AppAuth</RootNamespace>
+        <AndroidClassParser>class-parse</AndroidClassParser>
+        <AndroidCodegenTarget>XAJavaInterop1</AndroidCodegenTarget>
+    </PropertyGroup>
+    
+    <PropertyGroup>
+        <PackageId>Xamarin.OpenId.AppAuth.Android</PackageId>
+        <Title>OpenID AppAuth (OAuth Client) for Android</Title>
+        <PackageDescription>
+            AppAuth for Android is a client SDK for communicating with OAuth 2.0 and OpenID Connect providers.
+            It strives to directly map the requests and responses of those specifications, while following the idiomatic style of the implementation language.
+            In addition to mapping the raw protocol flows, convenience methods are available to assist with common tasks like performing an action with fresh tokens.
+        </PackageDescription>
+        <Authors>Microsoft</Authors>
+        <Owners>Microsoft</Owners>
+        <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
+        <PackageIconUrl>https://raw.githubusercontent.com/xamarin/XamarinComponents/master/XPlat/OpenId/images/logo_128x128.png</PackageIconUrl>
+        <PackageProjectUrl>https://go.microsoft.com/fwlink/?linkid=865038</PackageProjectUrl>
+        <PackageLicenseUrl>https://go.microsoft.com/fwlink/?linkid=864980</PackageLicenseUrl>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <PackageVersion>0.9.0</PackageVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <TransformFile Include="Transforms\*.xml" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="..\..\..\externals\android\appauth.aar">
+            <Link>appauth.aar</Link>
+        </None>
+        <None Include="..\..\..\External-Dependency-Info.txt" Pack="True" PackagePath="THIRD-PARTY-NOTICES.txt" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <LibraryProjectZip Include="..\..\..\externals\android\appauth.aar" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Xamarin.AndroidX.Annotation" Version="1.2.0" />
+      <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.3.0" />
+      <PackageReference Include="Xamarin.AndroidX.Browser" Version="1.3.0.5" />
+    </ItemGroup>
 </Project>
